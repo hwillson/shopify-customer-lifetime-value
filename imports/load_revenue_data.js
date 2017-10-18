@@ -8,13 +8,13 @@ import subscriptionRevenueCollection from './collection';
 // "Email", "Financial Status", "Total", "Created at", "Lineitem sku", "Id",
 // "Tags"
 const COLUMNS = {
-  email: 0,
-  financialStatus: 1,
-  total: 2,
-  createdAt: 3,
-  sku: 4,
-  orderId: 5,
-  tags: 6,
+  email: 1,
+  financialStatus: 2,
+  total: 11,
+  createdAt: 15,
+  sku: 20,
+  orderId: 55,
+  tags: 56,
 };
 
 const saveOrder = (order) => {
@@ -35,7 +35,7 @@ const isRenewalOrder = (order, line) =>
 export default function loadRevenueData() {
   console.log('[START] Loading revenue data ...');
 
-  const csvData = fs.readFileSync('/tmp/data.csv').toString();
+  const csvData = fs.readFileSync('/tmp/orders_export_5.csv').toString();
   const csv = csvParse(csvData);
 
   let order;
